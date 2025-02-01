@@ -33,7 +33,7 @@ export const addToCart = async (req, res) => {
     }
 
     await user.save();
-    res.json(iser.cartItems);
+    res.json(user.cartItems);
   } catch (error) {
     console.log(`❌ Error in addToCart controller ${error.message}`);
     res

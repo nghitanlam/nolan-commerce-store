@@ -132,11 +132,11 @@ export const getRecommendedProducts = async (req, res) => {
 };
 
 export const getProductsByCategory = async (req, res) => {
-  try {
-    const { category } = req.params;
+  const { category } = req.params;
 
+  try {
     const products = await Product.find({ category });
-    res.json(products);
+    res.json({ products });
   } catch (error) {
     console.log(
       `❌ Error in getProductsByCategory controller ${error.message}`,
